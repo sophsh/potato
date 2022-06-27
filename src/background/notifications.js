@@ -39,13 +39,22 @@ export default class Notifications {
       if (settings.isNotificationSoundEnabled) {
         // new Audio("/assets/sounds/Portal2_sfx_button_positive.mp3").play();
 
+        var counter = 0;
+        var maxIterations = 3;
+
         var sound = new Howl({
           src: ['/assets/sounds/Portal2_sfx_button_positive.mp3'],
+          autoplay: true,
           loop: true,
-          volume: 0.5,
+          rate: 1,
+          onend: function() {
+            counter++;
+            if (counter === maxIterations - 1) {
+              sound.loop(false);
+            }
+          }
         });
-        sound.play();
-
+        // sound.play();
       }
     });
   }

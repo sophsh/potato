@@ -1,4 +1,5 @@
 import browser from "webextension-polyfill";
+import {Howl, Howler} from 'howler';
 
 import { NOTIFICATION_ID, TIMER_TYPE } from "../utils/constants";
 
@@ -12,7 +13,7 @@ export default class Notifications {
   createBrowserNotification(timerType) {
     let message = "";
 
-    switch (timerType) {
+    switch (timerType) { 
       case TIMER_TYPE.TOMATO:
         message = "Your Tomato timer is done!";
         break;
@@ -36,7 +37,15 @@ export default class Notifications {
 
     this.settings.getSettings().then((settings) => {
       if (settings.isNotificationSoundEnabled) {
-        new Audio("/assets/sounds/Portal2_sfx_button_positive.mp3").play();
+        // new Audio("/assets/sounds/Portal2_sfx_button_positive.mp3").play();
+
+        var sound = new Howl({
+          src: ['/assets/sounds/Portal2_sfx_button_positive.mp3'],
+          loop: true,
+          volume: 0.5,
+        });
+        sound.play();
+
       }
     });
   }

@@ -10,6 +10,7 @@ import {
   getTimerTypeMilliseconds,
 } from "../utils/utils";
 import Settings from "../utils/settings";
+import { Callbacks } from "jquery";
 
 export default class Panel {
   constructor() {
@@ -34,6 +35,13 @@ export default class Panel {
     document.getElementById("tomato-button").addEventListener("click", () => {
       this.setTimer(TIMER_TYPE.TOMATO);
       this.setBackgroundTimer(TIMER_TYPE.TOMATO);
+    });
+
+    document.getElementById("tomato-auto-button").addEventListener("click", () => {
+      this.setTimer(TIMER_TYPE.TOMATO);
+      this.setBackgroundTimer(TIMER_TYPE.TOMATO);
+
+      this.goBreak(TIMER_TYPE.TOMATO);
     });
 
     document
@@ -120,6 +128,10 @@ export default class Panel {
         type,
       },
     });
+  }
+
+  goBreak(type){
+    this.setTimer(type);
   }
 }
 

@@ -14,6 +14,7 @@ import {
   TIMER_TYPE,
   BADGE_BACKGROUND_COLOR_BY_TIMER_TYPE,
 } from "../utils/constants";
+import Panel from "../panel/panel";
 
 export default class Timer {
   constructor() {
@@ -77,6 +78,12 @@ export default class Timer {
                 this.badge.setBadgeText("<1", badgeBackgroundColor);
               else this.badge.setBadgeText(minutesLeft, badgeBackgroundColor);
             }
+          }
+
+          //
+          if(type === "tomato" && timeLeft <= 0){
+            this.setTimer(TIMER_TYPE.SHORT_BREAK);
+            this.setBackgroundTimer(TIMER_TYPE.SHORT_BREAK);
           }
         }, getSecondsInMilliseconds(1)),
         scheduledTime: Date.now() + milliseconds,

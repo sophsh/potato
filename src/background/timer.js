@@ -79,7 +79,6 @@ export default class Timer {
               else this.badge.setBadgeText(minutesLeft, badgeBackgroundColor);
             }
           }
-
           //
           if(type === "tomato" && timeLeft <= 0){
             this.setTimer(TIMER_TYPE.SHORT_BREAK);

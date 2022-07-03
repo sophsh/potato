@@ -7,6 +7,7 @@ export const STORAGE_KEY = {
 
 export const SETTINGS_KEY = {
   MINUTES_IN_TOMATO: "minutesInTomato",
+  MINUTES_IN_TOMATO_AUTO: "minutesInTomatoAuto",
   MINUTES_IN_SHORT_BREAK: "minutesInShortBreak",
   MINUTES_IN_LONG_BREAK: "minutesInLongBreak",
   IS_NOTIFICATION_SOUND_ENABLED: "isNotificationSoundEnabled",
@@ -15,6 +16,7 @@ export const SETTINGS_KEY = {
 
 export const DEFAULT_SETTINGS = {
   [SETTINGS_KEY.MINUTES_IN_TOMATO]: 0.2,
+  [SETTINGS_KEY.MINUTES_IN_TOMATO_AUTO]: 0.2,
   [SETTINGS_KEY.MINUTES_IN_SHORT_BREAK]: 0.2,
   [SETTINGS_KEY.MINUTES_IN_LONG_BREAK]: 15,
   [SETTINGS_KEY.IS_NOTIFICATION_SOUND_ENABLED]: true,
@@ -23,12 +25,14 @@ export const DEFAULT_SETTINGS = {
 
 export const TIMER_TYPE = {
   TOMATO: "tomato",
+  TOMATO_AUTO: "tomatoAuto",
   SHORT_BREAK: "shortBreak",
   LONG_BREAK: "longBreak",
 };
 
 export const BADGE_BACKGROUND_COLOR_BY_TIMER_TYPE = {
   [TIMER_TYPE.TOMATO]: "#dc3545",
+  [TIMER_TYPE.TOMATO_AUTO]: "#dc3545",
   [TIMER_TYPE.SHORT_BREAK]: "#943126",
   [TIMER_TYPE.LONG_BREAK]: "#943126",
 };

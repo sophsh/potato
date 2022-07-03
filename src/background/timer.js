@@ -80,7 +80,7 @@ export default class Timer {
             }
           }
           //
-          if(type === "tomato" && timeLeft <= 0){
+          if(type === "tomatoAuto" && timeLeft <= 0){
             this.setTimer(TIMER_TYPE.SHORT_BREAK);
             this.setBackgroundTimer(TIMER_TYPE.SHORT_BREAK);
           }

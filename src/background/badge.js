@@ -19,7 +19,7 @@ export default class Badge {
     try {
       browser.browserAction.setBadgeText({ text });
       browser.browserAction.setBadgeBackgroundColor({ color: backgroundColor });
-      browser.browserAction.setBadgeTextColor({ color: "white" });
+      browser.browserAction.setBadgeTextColor({ color: "black" });
     } catch (ignoredError) {
       return;
     }

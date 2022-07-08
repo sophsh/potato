@@ -17,6 +17,9 @@ export default class Notifications {
       case TIMER_TYPE.TOMATO:
         message = "Your Tomato timer is done!";
         break;
+      case TIMER_TYPE.TOMATO_AUTO:
+        message = "Your Tomato timer is done!\nYour short break will start now!";
+        break;
       case TIMER_TYPE.SHORT_BREAK:
         message = "Your short break is done!";
         break;
@@ -40,10 +43,27 @@ export default class Notifications {
         // new Audio("/assets/sounds/Portal2_sfx_button_positive.mp3").play();
 
         var counter = 0;
-        var maxIterations = 3;
+        var maxIterations = 5;
+        var selectedSound = '';
+
+        // console.log(settings.chosenSound);
+        switch (settings.chosenSound){
+          case "Portal":
+            selectedSound = '/assets/sounds/Portal2_sfx_button_positive.mp3';
+            break;
+          case "Huawei":
+            selectedSound = '/assets/sounds/Huawei_Notification_Sound_1.mp3';
+            break;
+          case "IPhone":
+            selectedSound = '/assets/sounds/IPhone_Notification_Ringtone.mp3';
+            break;
+          default:
+            selectedSound = '/assets/sounds/Portal2_sfx_button_positive.mp3';
+            break;
+        }
 
         var sound = new Howl({
-          src: ['/assets/sounds/Portal2_sfx_button_positive.mp3'],
+          src: [selectedSound],
           autoplay: true,
           loop: true,
           rate: 1,

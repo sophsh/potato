@@ -40,8 +40,6 @@ export default class Panel {
     document.getElementById("tomato-auto-button").addEventListener("click", () => {
       this.setTimer(TIMER_TYPE.TOMATO_AUTO);
       this.setBackgroundTimer(TIMER_TYPE.TOMATO_AUTO);
-
-      // this.goBreak(TIMER_TYPE.TOMATO);
     });
 
     document
@@ -129,10 +127,6 @@ export default class Panel {
       },
     });
   }
-
-  // goBreak(type){
-  //   this.setTimer(type);
-  // }
 }
 
 document.addEventListener("DOMContentLoaded", () => {

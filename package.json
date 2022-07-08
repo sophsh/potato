@@ -1,7 +1,7 @@
 {
-  "name": "tomato-clock",
+  "name": "potato-clock",
   "version": "6.0.2",
-  "description": "Tomato Clock is a simple browser extension for managing your productivity.",
+  "description": "Potato Clock is a simple browser extension for managing your productivity.",
   "main": "src/background.js",
   "scripts": {
     "build": "webpack --mode=production && node ./scripts/build-zip.js",

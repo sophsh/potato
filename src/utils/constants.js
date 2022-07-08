@@ -1,4 +1,4 @@
-export const NOTIFICATION_ID = "tomatoClockNotification";
+export const NOTIFICATION_ID = "potatoClockNotification";
 
 export const STORAGE_KEY = {
   TIMELINE: "timeline",
@@ -6,8 +6,8 @@ export const STORAGE_KEY = {
 };
 
 export const SETTINGS_KEY = {
-  MINUTES_IN_TOMATO: "minutesInTomato",
-  MINUTES_IN_TOMATO_AUTO: "minutesInTomatoAuto",
+  MINUTES_IN_POTATO: "minutesInPotato",
+  MINUTES_IN_POTATO_AUTO: "minutesInPotatoAuto",
   MINUTES_IN_SHORT_BREAK: "minutesInShortBreak",
   MINUTES_IN_LONG_BREAK: "minutesInLongBreak",
   IS_NOTIFICATION_SOUND_ENABLED: "isNotificationSoundEnabled",
@@ -16,8 +16,8 @@ export const SETTINGS_KEY = {
 };
 
 export const DEFAULT_SETTINGS = {
-  [SETTINGS_KEY.MINUTES_IN_TOMATO]: 1,
-  [SETTINGS_KEY.MINUTES_IN_TOMATO_AUTO]: 1,
+  [SETTINGS_KEY.MINUTES_IN_POTATO]: 1,
+  [SETTINGS_KEY.MINUTES_IN_POTATO_AUTO]: 1,
   [SETTINGS_KEY.MINUTES_IN_SHORT_BREAK]: 5,
   [SETTINGS_KEY.MINUTES_IN_LONG_BREAK]: 15,
   [SETTINGS_KEY.IS_NOTIFICATION_SOUND_ENABLED]: true,
@@ -26,15 +26,15 @@ export const DEFAULT_SETTINGS = {
 };
 
 export const TIMER_TYPE = {
-  TOMATO: "tomato",
-  TOMATO_AUTO: "tomatoAuto",
+  POTATO: "potato",
+  POTATO_AUTO: "potatoAuto",
   SHORT_BREAK: "shortBreak",
   LONG_BREAK: "longBreak",
 };
 
 export const BADGE_BACKGROUND_COLOR_BY_TIMER_TYPE = {
-  [TIMER_TYPE.TOMATO]: "#FFA3C7",
-  [TIMER_TYPE.TOMATO_AUTO]: "#FFA3C7",
+  [TIMER_TYPE.POTATO]: "#FFA3C7",
+  [TIMER_TYPE.POTATO_AUTO]: "#FFA3C7",
   [TIMER_TYPE.SHORT_BREAK]: "#FFE18F",
   [TIMER_TYPE.LONG_BREAK]: "#FFE18F",
 };

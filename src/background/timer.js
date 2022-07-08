@@ -80,7 +80,7 @@ export default class Timer {
             }
           }
           //
-          if(type === "tomatoAuto" && timeLeft <= 0){
+          if(type === "potatoAuto" && timeLeft <= 0){
             this.setTimer(TIMER_TYPE.SHORT_BREAK);
             this.setBackgroundTimer(TIMER_TYPE.SHORT_BREAK);
           }
@@ -122,8 +122,8 @@ export default class Timer {
 
     browser.commands.onCommand.addListener((command) => {
       switch (command) {
-        case "start-tomato":
-          this.setTimer(TIMER_TYPE.TOMATO);
+        case "start-potato":
+          this.setTimer(TIMER_TYPE.POTATO);
           break;
         case "start-short-break":
           this.setTimer(TIMER_TYPE.SHORT_BREAK);

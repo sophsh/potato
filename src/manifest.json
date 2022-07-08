@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Tomato Clock",
+  "name": "Potato Clock",
   "version": "__REPLACED_ON_BUILD__",
   "author": "Samuel Jun",
   "description": "A simple browser extension for managing your productivity.",
@@ -12,24 +12,14 @@
   },
 
   "icons": {
-    "16": "/assets/images/tomato-icon-16.png",
-    "32": "/assets/images/tomato-icon-32.png",
-    "48": "/assets/images/tomato-icon-48.png",
-    "64": "/assets/images/tomato-icon-64.png",
-    "128": "/assets/images/tomato-icon-128.png",
-    "256": "/assets/images/tomato-icon-256.png"
+    "64":"/assets/images/kawaii_potato-64.png"
   },
 
   "browser_action": {
     "default_icon": {
-      "16": "/assets/images/tomato-icon-16.png",
-      "32": "/assets/images/tomato-icon-32.png",
-      "48": "/assets/images/tomato-icon-48.png",
-      "64": "/assets/images/tomato-icon-64.png",
-      "128": "/assets/images/tomato-icon-128.png",
-      "256": "/assets/images/tomato-icon-256.png"
+      "64":"/assets/images/kawaii_potato-64.png"
     },
-    "default_title": "Tomato Clock",
+    "default_title": "Potato Clock",
     "default_popup": "/panel/panel.html"
   },
 
@@ -40,11 +30,11 @@
   "permissions": ["notifications", "storage"],
 
   "commands": {
-    "start-tomato": {
+    "start-potato": {
       "suggested_key": {
         "default": "Alt+Shift+1"
       },
-      "description": "Start a new tomato timer."
+      "description": "Start a new potato timer."
     },
     "start-short-break": {
       "suggested_key": {

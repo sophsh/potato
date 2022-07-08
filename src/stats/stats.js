@@ -19,7 +19,7 @@ import { DATE_UNIT, TIMER_TYPE } from "../utils/constants";
 export default class Stats {
   constructor() {
     // Get DOM Elements
-    this.tomatoesCount = document.getElementById("tomatoes-count");
+    this.potatoesCount = document.getElementById("potatoes-count");
     this.shortBreaksCount = document.getElementById("short-breaks-count");
     this.longBreaksCount = document.getElementById("long-breaks-count");
     this.resetStatsButton = document.getElementById("reset-stats-button");
@@ -30,9 +30,9 @@ export default class Stats {
     );
 
     this.ctx = document
-      .getElementById("completed-tomato-dates-chart")
+      .getElementById("completed-potato-dates-chart")
       .getContext("2d");
-    this.completedTomatoesChart = null;
+    this.completedPotatoesChart = null;
 
     this.handleResetStatsButtonClick = this.handleResetStatsButtonClick.bind(
       this
@@ -77,7 +77,7 @@ export default class Stats {
 
   handleExportStatsButtonClick() {
     this.timeline.getTimeline().then((timeline) => {
-      const filename = `${getFilenameDate()}_tomato-clock-stats.json`;
+      const filename = `${getFilenameDate()}_potato-clock-stats.json`;
 
       const dataStr =
         "data:text/json;charset=utf-8," +
@@ -117,7 +117,7 @@ export default class Stats {
     this.changeStatDates(momentLastWeek.toDate(), momentToday.toDate());
   }
 
-  addTomatoDateToChartData(data, date, dateUnit) {
+  addPotatoDateToChartData(data, date, dateUnit) {
     for (let i = 0; i < data.labels.length; i++) {
       if (data.labels[i] === getDateLabel(date, dateUnit)) {
         data.datasets[0].data[i]++;
@@ -127,7 +127,7 @@ export default class Stats {
   }
 
   setStatsText(stats) {
-    this.tomatoesCount.textContent = stats.tomatoes;
+    this.potatoesCount.textContent = stats.potatoes;
     this.shortBreaksCount.textContent = stats.shortBreaks;
     this.longBreaksCount.textContent = stats.longBreaks;
   }
@@ -143,11 +143,11 @@ export default class Stats {
       dateUnit
     );
 
-    const completedTomatoesChartData = {
+    const completedPotatoesChartData = {
       labels: dateRangeStrings,
       datasets: [
         {
-          label: "Tomatoes",
+          label: "Potatoes",
           fill: true,
           borderColor: "rgba(255,0,0,1)",
           backgroundColor: "rgba(255,0,0,0.2)",
@@ -159,7 +159,7 @@ export default class Stats {
     };
 
     const stats = {
-      tomatoes: 0,
+      potatoes: 0,
       shortBreaks: 0,
       longBreaks: 0,
     };
@@ -167,10 +167,10 @@ export default class Stats {
     // Go through timeline
     for (let timelineAlarm of filteredTimeline) {
       switch (timelineAlarm.type) {
-        case TIMER_TYPE.TOMATO:
-          stats.tomatoes++;
-          this.addTomatoDateToChartData(
-            completedTomatoesChartData,
+        case TIMER_TYPE.POTATO:
+          stats.potatoes++;
+          this.addPotatoDateToChartData(
+            completedPotatoesChartData,
             timelineAlarm.date,
             dateUnit
           );
@@ -188,14 +188,14 @@ export default class Stats {
 
     this.setStatsText(stats);
 
-    // Setup 'Completed Tomatoes' Line Chart
-    if (this.completedTomatoesChart) {
-      this.completedTomatoesChart.config.data = completedTomatoesChartData;
-      this.completedTomatoesChart.update();
+    // Setup 'Completed Potatoes' Line Chart
+    if (this.completedPotatoesChart) {
+      this.completedPotatoesChart.config.data = completedPotatoesChartData;
+      this.completedPotatoesChart.update();
     } else {
-      this.completedTomatoesChart = new Chart(this.ctx, {
+      this.completedPotatoesChart = new Chart(this.ctx, {
         type: "line",
-        data: completedTomatoesChartData,
+        data: completedPotatoesChartData,
         options: {
           tooltips: {
             intersect: false,

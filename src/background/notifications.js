@@ -14,11 +14,11 @@ export default class Notifications {
     let message = "";
 
     switch (timerType) { 
-      case TIMER_TYPE.TOMATO:
-        message = "Your Tomato timer is done!";
+      case TIMER_TYPE.POTATO:
+        message = "Your Potato timer is done!";
         break;
-      case TIMER_TYPE.TOMATO_AUTO:
-        message = "Your Tomato timer is done!\nYour short break will start now!";
+      case TIMER_TYPE.POTATO_AUTO:
+        message = "Your Potato timer is done!\nYour short break will start now!";
         break;
       case TIMER_TYPE.SHORT_BREAK:
         message = "Your short break is done!";
@@ -33,8 +33,8 @@ export default class Notifications {
 
     browser.notifications.create(NOTIFICATION_ID, {
       type: "basic",
-      iconUrl: "/assets/images/tomato-icon-64.png",
-      title: "Tomato Clock",
+      iconUrl: "/assets/images/kawaii_potato-64.png",
+      title: "Potato Clock",
       message,
     });
 
@@ -83,7 +83,7 @@ export default class Notifications {
     await browser.notifications.create(null, {
       type: "basic",
       iconUrl: "/assets/images/tomato-icon-inactive-64.png",
-      title: "Error! - Tomato Clock",
+      title: "Error! - Potato Clock",
       message:
         "The storage limit was hit. Consider exporting and resetting stats.",
     });

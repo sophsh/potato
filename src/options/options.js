@@ -9,7 +9,7 @@ export default class Options {
   constructor() {
     this.settings = new Settings();
 
-    this.domMinutesInTomato = document.getElementById("minutes-in-tomato");
+    this.domMinutesInPotato = document.getElementById("minutes-in-potato");
     this.domMinutesInShortBreak = document.getElementById(
       "minutes-in-short-break"
     );
@@ -32,7 +32,7 @@ export default class Options {
   setOptionsOnPage() {
     this.settings.getSettings().then((settings) => {
       const {
-        minutesInTomato,
+        minutesInPotato,
         minutesInShortBreak,
         minutesInLongBreak,
         isNotificationSoundEnabled,
@@ -40,7 +40,7 @@ export default class Options {
         isToolbarBadgeEnabled,
       } = settings;
 
-      this.domMinutesInTomato.value = minutesInTomato;
+      this.domMinutesInPotato.value = minutesInPotato;
       this.domMinutesInShortBreak.value = minutesInShortBreak;
       this.domMinutesInLongBreak.value = minutesInLongBreak;
       this.domNotificationSoundCheckbox.checked = isNotificationSoundEnabled;
@@ -63,7 +63,7 @@ export default class Options {
   }
 
   saveOptions() {
-    const minutesInTomato = parseInt(this.domMinutesInTomato.value);
+    const minutesInPotato = parseInt(this.domMinutesInPotato.value);
     const minutesInShortBreak = parseInt(this.domMinutesInShortBreak.value);
     const minutesInLongBreak = parseInt(this.domMinutesInLongBreak.value);
     const isNotificationSoundEnabled = this.domNotificationSoundCheckbox
@@ -72,8 +72,8 @@ export default class Options {
     const isToolbarBadgeEnabled = this.domToolbarBadgeCheckbox.checked;
 
     this.settings.saveSettings({
-      [SETTINGS_KEY.MINUTES_IN_TOMATO]: minutesInTomato,
-      [SETTINGS_KEY.MINUTES_IN_TOMATO_AUTO]: minutesInTomato,
+      [SETTINGS_KEY.MINUTES_IN_POTATO]: minutesInPotato,
+      [SETTINGS_KEY.MINUTES_IN_POTATO_AUTO]: minutesInPotato,
       [SETTINGS_KEY.MINUTES_IN_SHORT_BREAK]: minutesInShortBreak,
       [SETTINGS_KEY.MINUTES_IN_LONG_BREAK]: minutesInLongBreak,
       [SETTINGS_KEY.IS_NOTIFICATION_SOUND_ENABLED]: isNotificationSoundEnabled,

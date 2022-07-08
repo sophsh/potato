@@ -1,8 +1,8 @@
-# Tomato Clock - Browser Extension
+# Potato Clock - Browser Extension
 
 [![Node CI](https://github.com/samueljun/tomato-clock/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/samueljun/tomato-clock/actions?query=workflow%3A%22Node+CI%22+branch%3Amaster)
 
-Tomato Clock is a simple browser extension for managing your productivity. Use the extension to break down your work into 25 minute 'Tomato' intervals separated by short breaks. Use the long break after completing four Tomato intervals.
+Potato Clock is a simple browser extension for managing your productivity. Use the extension to break down your work into 25 minute 'Potato' intervals separated by short breaks. Use the long break after completing four Potato intervals.
 
 Features:
 
@@ -10,9 +10,9 @@ Features:
 - Browser notifications
 - Stat tracking
 
-You can customize the length of the Tomatoes and breaks in the extension page. The extension uses the default browser notification system, accompanied by a sound, to let you know when the timer is over. The extension also features stats for tracking how many Tomatoes you complete. Your stats are synced across devices using the browser's cloud storage support.
+You can customize the length of the Potatoes and breaks in the extension page. The extension uses the default browser notification system, accompanied by a sound, to let you know when the timer is over. The extension also features stats for tracking how many Potatoes you complete. Your stats are synced across devices using the browser's cloud storage support.
 
-Due to a trademark complaint, the extension was renamed from Pomodoro Clock to Tomato Clock.
+Due to a trademark complaint, the extension was renamed from Pomodoro Clock to Potato Clock.
 
 Please file any issues or feature requests at https://github.com/samueljun/tomato-clock/issues.
 
@@ -76,14 +76,14 @@ npm run build
 
 ## States export json format
 
-The expected formatting of Tomato Clock's .json files is as follows
+The expected formatting of Potato Clock's .json files is as follows
 
 ```json
 [
-  { "timeout": 1500000, "type": "tomato", "date": "2020-08-29T18:07:55.895Z" },
+  { "timeout": 1500000, "type": "potato", "date": "2020-08-29T18:07:55.895Z" },
   { "timeout": 300000, "type": "shortBreak", "date": "2022-04-13T04:13:37.406Z" },
   { "timeout": 900000, "type": "longBreak", "date": "2022-04-13T04:13:40.030Z" },
-  { "timeout": 1500000, "type": "tomato", "date": "2022-04-13T04:13:45.182Z" }
+  { "timeout": 1500000, "type": "potato", "date": "2022-04-13T04:13:45.182Z" }
 ]
 ```
 
@@ -91,5 +91,5 @@ The expected formatting of Tomato Clock's .json files is as follows
 - Each object {} is an instance of the clock timer.
 - Within each object:
   - "timeout": is the time in milliseconds of the timer
-  - "type": is one of "tomato", "shortBreak", or "longBreak"
+  - "type": is one of "potato", "shortBreak", or "longBreak"
   - "date": is the exact date and time string in the [ISOString format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)

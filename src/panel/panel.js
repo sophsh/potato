@@ -32,14 +32,14 @@ export default class Panel {
   }
 
   setEventListeners() {
-    document.getElementById("tomato-button").addEventListener("click", () => {
-      this.setTimer(TIMER_TYPE.TOMATO);
-      this.setBackgroundTimer(TIMER_TYPE.TOMATO);
+    document.getElementById("potato-button").addEventListener("click", () => {
+      this.setTimer(TIMER_TYPE.POTATO);
+      this.setBackgroundTimer(TIMER_TYPE.POTATO);
     });
 
-    document.getElementById("tomato-auto-button").addEventListener("click", () => {
-      this.setTimer(TIMER_TYPE.TOMATO_AUTO);
-      this.setBackgroundTimer(TIMER_TYPE.TOMATO_AUTO);
+    document.getElementById("potato-auto-button").addEventListener("click", () => {
+      this.setTimer(TIMER_TYPE.POTATO_AUTO);
+      this.setBackgroundTimer(TIMER_TYPE.POTATO_AUTO);
     });
 
     document

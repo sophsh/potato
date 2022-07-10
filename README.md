@@ -2,13 +2,15 @@
 
 [![Node CI](https://github.com/samueljun/tomato-clock/workflows/Node%20CI/badge.svg?branch=master)](https://github.com/samueljun/tomato-clock/actions?query=workflow%3A%22Node+CI%22+branch%3Amaster)
 
-Potato Clock is a simple browser extension for managing your productivity. Use the extension to break down your work into 25 minute 'Potato' intervals separated by short breaks. Use the long break after completing four Potato intervals.
+Potato Clock is a modified web extension from Tomato Clock. Potato Clock is a simple browser extension for managing your productivity. Use the extension to break down your work into 25 minute 'Potato' intervals separated by short breaks. Use the long break after completing four Potato intervals.
 
 Features:
 
 - Customizable timer lengths
 - Browser notifications
 - Stat tracking
+- Multiple options of notification sounds
+- Automatically start break time
 
 You can customize the length of the Potatoes and breaks in the extension page. The extension uses the default browser notification system, accompanied by a sound, to let you know when the timer is over. The extension also features stats for tracking how many Potatoes you complete. Your stats are synced across devices using the browser's cloud storage support.
 

@@ -4,26 +4,19 @@ import "./options.css";
 import Settings from "../utils/settings";
 import { SETTINGS_KEY } from "../utils/constants";
 import { windows } from "webextension-polyfill";
+import {Howl, Howler} from 'howler';
 
 export default class Options {
   constructor() {
     this.settings = new Settings();
 
     this.domMinutesInPotato = document.getElementById("minutes-in-potato");
-    this.domMinutesInShortBreak = document.getElementById(
-      "minutes-in-short-break"
-    );
-    this.domMinutesInLongBreak = document.getElementById(
-      "minutes-in-long-break"
-    );
-    this.domNotificationSoundCheckbox = document.getElementById(
-      "notification-sound-checkbox"
-    );
+    this.domMinutesInShortBreak = document.getElementById("minutes-in-short-break");
+    this.domMinutesInLongBreak = document.getElementById("minutes-in-long-break");
+    this.domNotificationSoundCheckbox = document.getElementById("notification-sound-checkbox");
     this.domChosenSound = document.getElementById("notify");
     this.domNotifyBox = document.getElementById("notify-box");
-    this.domToolbarBadgeCheckbox = document.getElementById(
-      "toolbar-badge-checkbox"
-    );
+    this.domToolbarBadgeCheckbox = document.getElementById("toolbar-badge-checkbox");
 
     this.setOptionsOnPage();
     this.setEventListeners();
@@ -108,9 +101,27 @@ export default class Options {
         this.saveOptions();
       }
     });
+
+    document.getElementById("notify").addEventListener("click", () => {
+      if(this.domChosenSound.value == "Portal") {
+        new Audio("/assets/sounds/Portal2_sfx_button_positive.mp3").play();
+      }
+
+      if(this.domChosenSound.value == "Huawei") {
+        new Audio("/assets/sounds/Huawei_Notification_Sound_1.mp3").play();
+      }
+
+      if(this.domChosenSound.value == "IPhone") {
+        new Audio("/assets/sounds/IPhone_Notification_Ringtone.mp3").play();
+      }
+    });
+
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   new Options();
 });
+
+
+
